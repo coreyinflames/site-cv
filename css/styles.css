@@ -147,6 +147,8 @@ h5 { font-weight:500; color:#2b2b2b; text-transform: none; font-size: 18px; line
 .read-more { position:absolute; z-index:54; bottom:0; left:0; text-align:center; width:100%; margin-bottom:-40px; opacity:0; -webkit-transition: opacity 0.42s ease-in-out 0s, margin 0.42s ease-in-out 0s; -moz-transition: opacity 0.42s ease-in-out 0s, margin 0.42s ease-in-out 0s; transition: opacity 0.42s ease-in-out 0s, margin 0.42s ease-in-out 0s; }
 .gallery_item:hover .read-more { margin-bottom:0; opacity:1 }
 .read-more span { background:rgba(255, 103, 95, .8); color:#fff; font-size:12px; text-transform:uppercase; font-style:normal; padding:10px 14px 11px 14px; display:inline-block; margin:0 auto; height:38px; }
+#arrow-up { display:block; }
+
 /* End Text and Buttons
 --------------------------------------------------------------------------------------------------------*/
 

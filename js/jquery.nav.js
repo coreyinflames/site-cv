@@ -225,7 +225,7 @@
 
 
 
-$('#nav a[href^="#"], a#arrow-down, a.whole-tile, a#inquire').on('click', function()
+$('#nav a[href^="#"], a#arrow-down, a.whole-tile, a#inquire, a#arrow-up').on('click', function()
 {  jQuery('#nav').hide();
    var the_id = $(this).attr("href");  
    $('html, body').animate(
