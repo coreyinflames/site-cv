@@ -13,4 +13,6 @@ app.controller('dadosFicha', function dadosFicha($scope) {
   $scope.objetivos = 'Trabalhando como desenvolvedor, tenho como objetivo primário aprimorar meus conhecimentos em Front-end e iniciar o aprendizado em Back-end, tendo como objetivo final a preparação das minhas habilidades para tornar-me um desenvolvedor Fullstack.'
   $scope.caracteristicas = 'Proativo, comunicativo, curioso, autodidata, inglês avançado'
   $scope.hobbies = 'Música, fotografia e esportes'
+
 });
+
