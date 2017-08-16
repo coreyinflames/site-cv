@@ -114,32 +114,33 @@
       </figcaption>
     </figure>
   </div>
-  <div class="container clearfix">
+  <!-- FICHA ABOUT -->
+  <div class="container clearfix" ng-controller="dadosFicha">
     <div class="big-break"></div>
     <div class="col1-3">
       <h4>Meu Perfil</h4>
       <ul class="unordered-list">
-        <li> Nome: João Batista Mororó Netto </li>
-        <li> Data de nascimento: 31 de Maio 1991 </li>
-        <li> Nacionalidade: Brasileiro </li>
-        <li> Endereço: Av. Pombal<br />
-          Manaira, 189 João Pessoa - PB </li>
-        <li> Email: <a href="#" title="">fleyefilms@gmail.com</a> </li>
-        <li> Fone: +55 (83) 99602-1359 </li>
+        <li> Nome: {{ nome }} </li>
+        <li> Data de nascimento: {{ data }} </li>
+        <li> Nacionalidade: {{ nacionalidade }} </li>
+        <li> Endereço: {{ endereco }}</li>
+        <li> Email: <a href="#" title="">{{ email }}</a> </li>
+        <li> Fone: {{ fone }}</li>
       </ul>
     </div>
     <div class="col2-3">
       <h4>Objetivos na empresa</h4>
       <p>
-        Trabalhando como desenvolvedor, tenho como objetivo primário aprimorar meus conhecimentos em Front-end e iniciar o aprendizado em Back-end, tendo como objetivo final a preparação das minhas habilidades para tornar-me um desenvolvedor Fullstack.
+        {{ objetivos }}
       </p>
       <p>
-        <strong>Características:</strong> Proativo, comunicativo, curioso, autodidata, inglês avançado.
+        <strong>Características:</strong> {{ caracteristicas }}.
       </p>
 
       <p>
-        <strong>Hobbies:</strong> Música, fotografia e esportes.
+        <strong>Hobbies:</strong> {{ hobbies }}.
       </p>
+    </div>
   </div>
 </section>
 <section class="section no-border" id="section3">
@@ -552,6 +553,8 @@
 <script src="js/general-lettering.js" type="text/javascript"></script>
 <script src="js/jquery.sliphover.min.js"></script>
 <script src="js/custom.js"></script>
-<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular-route.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>
