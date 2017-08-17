@@ -1,82 +1,80 @@
 <?php
-
-
-
-if(!$_POST) exit;
-
-
-
-function tommus_email_validate($email) { return filter_var($email, FILTER_VALIDATE_EMAIL) && preg_match('/@.+\./', $email); }
-
-
-$name = $_POST['name']; $email = $_POST['email']; $comments = $_POST['comments'];
-
-
-
-if(trim($name) == '') {
-
-	exit('<div class="error_message">Entre com seu nome.</div>');
-
-} else if(trim($name) == 'Your Name') {
-
-	exit('<div class="error_message">Entre com seu nome.</div>');
-
-} else if(trim($email) == 'Email') {
-
-	exit('<div class="error_message">Entre com um email válido.</div>');
-
-} else if(!tommus_email_validate($email)) {
-
-	exit('<div class="error_message">Você digitou um email inválido.</div>');
-
-} else if(trim($comments) == 'Tell us what you think!') {
-
-	exit('<div class="error_message">Digite sua mensagem.</div>');
-
-} else if(trim($comments) == '') {
-
-	exit('<div class="error_message">Digite sua mensagem.</div>');
-	
-} else if( strpos($comments, 'href') !== false ) {
-
-	exit('<div class="error_message">Please leave links as plain text.</div>');
-	
-} else if( strpos($comments, '[url') !== false ) {
-
-	exit('<div class="error_message">Please leave links as plain text.</div>');
-
-} if(get_magic_quotes_gpc()) { $comments = stripslashes($comments); }
-
-
-
-$address = 'joaonettopb@hotmail.com';
-
-$site_name = 'JN Dev - Personal CV';
-
-$e_subject = 'Mensagem de:' . $name . '.';
-
-$e_body = "Mensagem enviada de JOÃO NETTO PERSONAL - CV." . "\r\n" . "\r\n";
-
-$e_content = "\"$comments\"" . "\r\n" . "\r\n";
-
-$e_reply = "Email de $name : email, $email";
-
-
-
-$msg = wordwrap( $e_body . $e_content . $e_reply, 70 );
-
-
-
-$headers = "From: $site_name" . "\r\n";
-
-$headers .= "Reply-To: $email" . "\r\n";
-
-$headers .= "MIME-Version: 1.0" . "\r\n";
-
-$headers .= "Content-type: text/plain; charset=utf-8" . "\r\n";
-
-$headers .= "Content-Transfer-Encoding: quoted-printable" . "\r\n";
-
-
-
-if(mail($address, $e_subject, $msg, $headers)) { echo "<fieldset><div id='success_page'><h4>Email Enviado!</h4></div></fieldset>"; }
+if(isset($_POST['email'])) {
+ 
+    // EDIT THE 2 LINES BELOW AS REQUIRED
+    $email_to = "fleyefilms@gmail.com";
+    $email_subject = "Assunto do email";
+ 
+    function died($error) {
+        // your error code can go here
+        echo "Desculpe mas existem erros no formulário enviado. ";
+        echo "Os erros são.<br /><br />";
+        echo $error."<br /><br />";
+        echo "Volte e conserte.<br /><br />";
+        die();
+    }
+ 
+ 
+    // validation expected data exists
+    if(!isset($_POST['name']) ||
+        !isset($_POST['email']) ||
+        !isset($_POST['comments'])) {
+        died('Desculpe mas existem erros no formulário enviado.');       
+    }
+ 
+     
+ 
+    $first_name = $_POST['name']; // required
+    $email_from = $_POST['email']; // required
+    $comments = $_POST['comments']; // required
+ 
+    $error_message = "";
+    $email_exp = '/^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/';
+ 
+  if(!preg_match($email_exp,$email_from)) {
+    $error_message .= 'O email não é válido.<br />';
+  }
+ 
+    $string_exp = "/^[A-Za-z .'-]+$/";
+ 
+  if(!preg_match($string_exp,$first_name)) {
+    $error_message .= 'O nome que você entrou é inválido.<br />';
+  }
+ 
+  if(strlen($comments) < 2) {
+    $error_message .= 'The Comments you entered do not appear to be valid.<br />';
+  }
+ 
+  if(strlen($error_message) > 0) {
+    died($error_message);
+  }
+ 
+    $email_message = "Form details below.\n\n";
+ 
+     
+    function clean_string($string) {
+      $bad = array("content-type","bcc:","to:","cc:","href");
+      return str_replace($bad,"",$string);
+    }
+ 
+     
+ 
+    $email_message .= "First Name: ".clean_string($name)."\n";
+    $email_message .= "Email: ".clean_string($email_from)."\n";
+    $email_message .= "Comments: ".clean_string($comments)."\n";
+ 
+// create email headers
+$headers = 'From: '.$email_from."\r\n".
+'Reply-To: '.$email_from."\r\n" .
+'X-Mailer: PHP/' . phpversion();
+@mail($email_to, $email_subject, $email_message, $headers);  
+?>
+ 
+<!-- include your own success html here -->
+ 
+<p>Thank you for contacting us. We will be in touch with you very soon.</p>
+ 
+<?php
+ 
+}
+?>
