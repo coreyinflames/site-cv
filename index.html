@@ -512,19 +512,18 @@
       <p class="sub-heading extra_spacing">Entre em contato pelo telefone ou por e-mail, retornarei o mais rápido possível.</p>
     </div>
     <div class="col3-3 col1-3m">
-      <div id="contact">
+      <div id="contact" ng-controller="txtmail">
         <form method="post" action="contact.php" name="personForm" id="contactform" autocomplete="on" novalidate ng-submit="personForm.$valid &&sendForm()">
           <fieldset>
           <label for="name" accesskey="U"><span class="required">Seu Nome</span></label>
-          <input name="name" type="text" id="name" size="30" title="Seu Nome" />
+          <input name="name" type="text" id="name" size="30" title="Seu Nome" placeholder="Seu Nome" />
           <label for="email" accesskey="E"><span class="required">Email</span></label>
-          <input name="email" type="text" id="email" size="30" title="Email" ng-model="txtmail" ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/" required/>
-
+          <input name="email" type="email" id="email" size="30" placeholder="Email" title="Email" ng-model="txtmail" ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/" required/>
           <span id="error-email" ng-show="personForm.email.$dirty&&personForm.email.$error.pattern">Entre com um email válido!</span>
 
           <label for="comments" accesskey="C"><span class="required">Assunto...</span></label>
-          <textarea name="comments" cols="40" rows="3" id="comments" title="Assunto..."></textarea>
-          <input type="submit" class="submit" id="submit" value="Enviar" ng-class="{mousestyle: param1}" ng-mouseenter="param1 = true" ng-mouseleave="param1 = false"/>
+          <textarea name="comments" cols="40" rows="3" id="comments" title="Assunto..." placeholder="Assunto..." ></textarea>
+          <input type="submit" class="submit" id="submit" value="Enviar"/>
           </fieldset>
           </div>
         </form>

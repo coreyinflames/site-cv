@@ -14,4 +14,8 @@ app.controller('dadosFicha', function dadosFicha($scope) {
   $scope.caracteristicas = 'Proativo, comunicativo, curioso, autodidata, inglês avançado'
   $scope.hobbies = 'Música, fotografia e esportes'
 
+})
+
+app.controller('txtmail', function txtmail($scope) {
+    $scope.name = "Email";
 });
