@@ -1,7 +1,7 @@
-// Define the `phonecatApp` module
+// Define the `app-cv` module
 var app = angular.module('app-cv', []);
 
-// Define the `PhoneListController` controller on the `phonecatApp` module
+// Define the `dadosFicha` controller on the `app-cv` module
 app.controller('dadosFicha', function dadosFicha($scope) {
 
   $scope.nome = 'João Batista Mororó Netto'
@@ -15,4 +15,3 @@ app.controller('dadosFicha', function dadosFicha($scope) {
   $scope.hobbies = 'Música, fotografia e esportes'
 
 });
-

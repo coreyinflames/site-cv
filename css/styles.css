@@ -148,9 +148,16 @@ h5 { font-weight:500; color:#2b2b2b; text-transform: none; font-size: 18px; line
 .gallery_item:hover .read-more { margin-bottom:0; opacity:1 }
 .read-more span { background:rgba(255, 103, 95, .8); color:#fff; font-size:12px; text-transform:uppercase; font-style:normal; padding:10px 14px 11px 14px; display:inline-block; margin:0 auto; height:38px; }
 #arrow-up { display:block; }
-
+.error{ color: #e44b43; font-weight: 700; }
+#error-email{ color: #e44b43; position: absolute; margin-top: -25px; font-weight: 700; font-style: italic;}
 /* End Text and Buttons
 --------------------------------------------------------------------------------------------------------*/
+
+
+
+/* Hover Submit --- feito no angularjs (linha 527 index.html) */
+
+.mousestyle {background-color:#f2672e !important; color: white !important; -webkit-transition-timing-function: ease-in-out !important; transition-timing-function: ease-in-out !important;}
 
 
 /* =6. Main Nav
@@ -239,8 +246,7 @@ header { position:relative; z-index: 9999; width:100%; background:#fff; padding:
 .accordion { margin:5px 0 45px 0; border-top:1px dotted #c0c0c0; }
 section.grey .accordion { border-top:0 }
 .tab { background:#fff; background-size:28px 16px; border-bottom:1px dotted #c0c0c0; margin-bottom:0px; position:relative }
-.tab-arrow { background:url(../images/icons/bg-arrow-down.png) no-repeat; background-size:28px 16px; width:48px; height:48px; position:absolute; right:30px; top:50px; display:block; opacity:0; -webkit-transition: opacity 0.2s ease 0s; transition: opacity 0.2s ease 0s; }
-.tab.closed:hover .tab-arrow, .tab.open .tab-arrow { opacity:1; -webkit-transition: opacity 0.2s ease 0s; transition: opacity 0.2s ease 0s; }
+.tab-arrow { background:url(../images/icons/bg-arrow-down.png) no-repeat; background-size:28px 16px; width:48px; height:48px; position:absolute; right:30px; top:50px; display:block; opacity:1; -webkit-transition: opacity 0.2s ease 0s; transition: opacity 0.2s ease 0s; }
 .tab.closed { cursor:pointer }
 section.grey .tab { margin-bottom:20px; }
 .time-range { width:260px; float:left; margin-right:20px; font-size:21px; font-weight:600; padding:40px; padding-right:0px; padding-top:45px; letter-spacing:-1px; text-transform:uppercase; height:100%; }
