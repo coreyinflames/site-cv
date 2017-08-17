@@ -42,7 +42,7 @@ if(isset($_POST['email'])) {
   }
  
   if(strlen($comments) < 2) {
-    $error_message .= 'The Comments you entered do not appear to be valid.<br />';
+    $error_message .= 'O texto não é válido.<br />';
   }
  
   if(strlen($error_message) > 0) {
@@ -72,7 +72,7 @@ $headers = 'From: '.$email_from."\r\n".
  
 <!-- include your own success html here -->
  
-<p>Thank you for contacting us. We will be in touch with you very soon.</p>
+<p>Obrigado pelo contato, em breve retornaremos seu email.</p>
  
 <?php
  
