@@ -49,7 +49,7 @@ if(trim($name) == '') {
 
 
 
-$address = 'fleyefilms@gmail.com';
+$address = 'joaonettopb@hotmail.com';
 
 $site_name = 'JN Dev - Personal CV';
 
