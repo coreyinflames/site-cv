@@ -59,7 +59,7 @@ if(isset($_POST['email'])) {
  
      
  
-    $email_message .= "Nome: ".clean_string($name)."\n";
+    $email_message .= "Nome: ".clean_string($first_name)."\n";
     $email_message .= "Email: ".clean_string($email_from)."\n";
     $email_message .= "Assunto: ".clean_string($comments)."\n";
  
@@ -72,7 +72,7 @@ $headers = 'From: '.$email_from."\r\n".
  
 <!-- include your own success html here -->
  
-<p>Obrigado pelo contato, em breve retornaremos seu email.</p>
+<p>Obrigado, entrarei em contato assim que possível.</p>
  
 <?php
  
