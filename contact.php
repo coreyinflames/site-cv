@@ -49,7 +49,7 @@ if(isset($_POST['email'])) {
     died($error_message);
   }
  
-    $email_message = "Form details below.\n\n";
+    $email_message = "Email enviado do formulário PERSONAL-CV.\n\n";
  
      
     function clean_string($string) {
