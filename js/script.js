@@ -5,7 +5,7 @@ var app = angular.module('app-cv', []);
 app.controller('dadosFicha', function dadosFicha($scope) {
 
   $scope.nome = 'João Batista Mororó Netto'
-  $scope.data = '31/05/1991'
+  $scope.datas = '31/05/1991'
   $scope.nacionalidade = 'Brasileiro'
   $scope.endereco = 'Av. Pombal, 189 - Manaira, João Pessoa - PB'
   $scope.email = 'fleyefilms@gmail.com'
@@ -14,8 +14,4 @@ app.controller('dadosFicha', function dadosFicha($scope) {
   $scope.caracteristicas = 'Proativo, comunicativo, curioso, autodidata, inglês avançado'
   $scope.hobbies = 'Música, fotografia e esportes'
 
-})
-
-app.controller('txtmail', function txtmail($scope) {
-    $scope.name = "Email";
 });
