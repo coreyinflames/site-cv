@@ -114,7 +114,7 @@ blockquote { background:url(../images/icons/bg-chat@2x.png) center 50px no-repea
 #message {margin:0px 0 50px 0px; width:300px; float:none }
 .prev-ajax { left: -10px; }
 .next-ajax { right: -10px; }
-.gallery_item > .gallery_item_text > .social_links { bottom: 30%; }
+.gallery_item > .gallery_item_text > .social_links { bottom: 50%; }
 .service_details { width:150px; margin-left: -75px; }
 }
 
